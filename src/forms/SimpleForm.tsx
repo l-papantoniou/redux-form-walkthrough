@@ -15,7 +15,7 @@ import {
   employeeActions,
   updateEmployee,
 } from "../reducers/EmployeeReducer";
-import initialState from "../initialValues/InitialState";
+import mapStateToProps from "../initialValues/InitialState";
 import renderTextField from "./TextField";
 import { EmployeeInterface } from "../interfaces/EmpoyeeInterface";
 import type {} from "redux-thunk/extend-redux";
@@ -150,7 +150,7 @@ export const SimpleForm: React.FC<
   );
 };
 
-export default (connect(initialState) as any)(
+export default (connect(mapStateToProps) as any)(
   reduxForm<{}, IRootState>({
     form: "simple",
     destroyOnUnmount: true,

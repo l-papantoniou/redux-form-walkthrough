@@ -10,7 +10,7 @@ export interface IRootState {
   id?: number | string | null;
 }
 
-const initialState = (state: IRootState) => {
+const mapStateToProps = (state: IRootState) => {
   return {
     initialValues: {
       firstName: state.employees.loadEmployee.firstname,
@@ -21,4 +21,4 @@ const initialState = (state: IRootState) => {
   };
 };
 
-export default initialState;
+export default mapStateToProps;
