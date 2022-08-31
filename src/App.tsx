@@ -14,6 +14,7 @@ import EditEmployee from "./components/EditEmployee";
 import ListEmployees from "./components/ListEmployees";
 import ButtonAppBar from "./components/Navbar";
 import Login from "./components/Login";
+import NotFoundPage from "./components/NotFoundPage";
 
 //client
 const client = axios.create({
@@ -98,6 +99,8 @@ const App = () => {
                 )
               }
             />
+
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Container>
       </Fragment>
