@@ -208,7 +208,7 @@ const ListEmployees = ({ setAuth }) => {
           </TableContainer>
         </CardContent>
       </Card>
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Button
           type="submit"
           color="error"

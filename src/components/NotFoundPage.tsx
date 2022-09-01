@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
+import Grid from "@material-ui/core/Grid";
 import { useNavigate } from "react-router-dom";
 
 export default function Error() {

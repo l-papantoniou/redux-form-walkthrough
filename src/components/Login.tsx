@@ -58,12 +58,12 @@ const Login = ({ setAuth }) => {
   return (
     <Fragment>
       <Dialog open>
-        <Grid container justify="center">
+        <Grid container justifyContent="center">
           <Avatar style={avatarStyle}>
             <LockOutlinedIcon />
           </Avatar>
         </Grid>
-        <Grid container justify="center">
+        <Grid container justifyContent="center">
           <DialogTitle>Sign In</DialogTitle>
         </Grid>
 

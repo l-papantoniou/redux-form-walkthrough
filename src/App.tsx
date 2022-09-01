@@ -99,7 +99,6 @@ const App = () => {
                 )
               }
             />
-
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Container>

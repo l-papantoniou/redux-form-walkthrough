@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               ΛΙΣΤΑ ΥΠΑΛΛΗΛΩΝ
             </Typography>
-            <Grid container justify="center">
+            <Grid container justifyContent="center">
               <Button
                 variant="contained"
                 color="success"
