@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import "../forms/SimpleForm";
 import SimpleForm from "../forms/SimpleForm";
+import SimpleFormSchema from "../forms/SimpleFormSchema";
 import { loadEmployee } from "../reducers/EmployeeReducer";
 
 const EditEmployee = (setAuth) => {
@@ -17,6 +18,6 @@ const EditEmployee = (setAuth) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
-  return <SimpleForm isNew={false} id={params.id} />;
+  return <SimpleForm isNew={false} schema={SimpleFormSchema} id={params.id} />;
 };
 export default EditEmployee;

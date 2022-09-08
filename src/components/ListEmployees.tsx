@@ -14,7 +14,7 @@ import UpdateIcon from "@mui/icons-material/Update";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { useNavigate } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
+import { Grid } from "@mui/material";
 import "../index.css"; // Import css
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import { confirmAlert } from "react-confirm-alert"; // Import
@@ -99,6 +99,7 @@ const ListEmployees = ({ setAuth }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [employees]);
 
+  console.log(employees);
   return (
     <Fragment>
       <Card

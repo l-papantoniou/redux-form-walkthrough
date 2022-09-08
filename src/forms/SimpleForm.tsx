@@ -16,9 +16,11 @@ import {
   updateEmployee,
 } from "../reducers/EmployeeReducer";
 import mapStateToProps from "../initialValues/InitialState";
-import renderTextField from "./TextField";
+import renderField from "./TextField";
 import { EmployeeInterface } from "../interfaces/EmpoyeeInterface";
 import type {} from "redux-thunk/extend-redux";
+import SimpleFormSchema from "./SimpleFormSchema";
+import { ISchema } from "../interfaces/IschemaInterface";
 
 interface IRootState {
   employees?: any;
@@ -31,8 +33,9 @@ export type FormValues = { [key: string]: any };
 export const SimpleForm: React.FC<
   IRootState & InjectedFormProps<FormValues, IRootState>
 > = (props) => {
-  const { handleSubmit, pristine, submitting, id, isNew } = props;
+  const { handleSubmit, pristine, submitting, id, isNew, schema } = props;
 
+  console.log(schema);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -75,62 +78,24 @@ export const SimpleForm: React.FC<
 
   return (
     <Fragment>
-      <Dialog open>
+      <Dialog open fullWidth>
         <DialogTitle>ΕΓΓΡΑΦΗ/ΕΝΗΜΕΡΩΣΗ</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Εισάγετε τα στοιχεία του υπαλλήλου.
+            Εισάγετε τα στοιχεία του υπαλλήλου:
           </DialogContentText>
           <form onSubmit={handleSubmit(onSubmitForm)}>
-            <div>
-              <label>Όνομα</label>
-              <div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {schema.elements.map((element) => (
                 <Field
-                  required
-                  id="firstName"
-                  name="firstName"
-                  component={renderTextField}
-                  type="text"
-                  placeholder="Όνομα"
+                  label={element.label}
+                  name={element.name}
+                  type={element.type}
+                  component={renderField}
                 />
-              </div>
+              ))}
             </div>
-            <div>
-              <label>Επώνυμο</label>
-              <div>
-                <Field
-                  required
-                  id="lastName"
-                  name="lastName"
-                  component={renderTextField}
-                  type="text"
-                  placeholder="Επώνυμο"
-                />
-              </div>
-            </div>
-            <label>Ημερομηνία Γέννησης</label>
-            <div>
-              <Field
-                name="birthDate"
-                id="birthDate"
-                component={renderTextField}
-                type="date"
-                placeholder="Ημερομηνία Γέννησης"
-              />
-            </div>
-            <div>
-              <label>ΑΦΜ</label>
-              <div>
-                <Field
-                  required
-                  name="afm"
-                  id="afm"
-                  component={renderTextField}
-                  type="text"
-                  placeholder="ΑΦΜ"
-                />
-              </div>
-            </div>
+
             {errorMessage && (
               <Alert severity="error">
                 <AlertTitle>Error</AlertTitle>
