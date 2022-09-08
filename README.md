@@ -4,7 +4,7 @@
 
 #  Redux-form-walkthrough
 
-This is a redux-form demo that has been created with typescript, axios, postgres and Mui components 
+This is a redux-form demo that has been created with React, Typescript, Axios, Postgres and Mui components 
 
 ![Logo](logo.png)
 
