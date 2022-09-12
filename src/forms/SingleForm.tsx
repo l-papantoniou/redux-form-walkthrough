@@ -10,14 +10,9 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
-import {
-  createEmployee,
-  employeeActions,
-  updateEmployee,
-} from "../reducers/EmployeeReducer";
+import { employeeActions } from "../reducers/EmployeeReducer";
 import mapStateToProps from "../initialValues/InitialState";
 import renderField from "./TextField";
-import { EmployeeInterface } from "../interfaces/EmpoyeeInterface";
 import type {} from "redux-thunk/extend-redux";
 
 interface IRootState {
@@ -31,9 +26,8 @@ export type FormValues = { [key: string]: any };
 export const ReduxForm: React.FC<
   IRootState & InjectedFormProps<FormValues, IRootState>
 > = (props) => {
-  const { handleSubmit, pristine, submitting, onSubmit, schema } = props;
-
-  const [errorMessage, setErrorMessage] = useState("");
+  const { handleSubmit, pristine, submitting, onSubmit, schema, errorMessage } =
+    props;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

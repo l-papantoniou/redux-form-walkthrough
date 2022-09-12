@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-
 import "../forms/SingleForm";
 import SimpleFormSchema from "../forms/SimpleFormSchema";
 import FormEmployee from "../forms/FormEmployee";
 import { EmployeeInterface } from "../interfaces/EmpoyeeInterface";
 import { createEmployee } from "../reducers/EmployeeReducer";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 export const InputEmployee = (setAuth) => {
@@ -29,7 +28,13 @@ export const InputEmployee = (setAuth) => {
       console.error(err.message);
     }
   };
-  return <FormEmployee schema={SimpleFormSchema} onSubmit={onSubmitForm} />;
+  return (
+    <FormEmployee
+      schema={SimpleFormSchema}
+      onSubmit={onSubmitForm}
+      errorMessage={errorMessage}
+    />
+  );
 };
 
 export default InputEmployee;

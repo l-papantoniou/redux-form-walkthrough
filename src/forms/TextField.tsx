@@ -1,5 +1,8 @@
 import * as React from "react";
 import TextField from "@material-ui/core/TextField";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import { FormControl, FormControlLabel, FormLabel } from "@material-ui/core";
 
 const renderField = ({
   label,
@@ -12,6 +15,7 @@ const renderField = ({
     case "text":
       return (
         <TextField
+          required
           fullWidth
           label={label}
           type={type}
@@ -25,6 +29,7 @@ const renderField = ({
     case "date":
       return (
         <TextField
+          required
           fullWidth
           margin="dense"
           InputLabelProps={{ shrink: true }}
@@ -36,6 +41,24 @@ const renderField = ({
           {...custom}
         />
       );
+
+    // case "radios":
+    //   return (
+    //     <FormControl>
+    //       <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+    //       <RadioGroup
+    //         aria-labelledby="demo-controlled-radio-buttons-group"
+    //         name="controlled-radio-buttons-group"
+    //       >
+    //         <FormControlLabel
+    //           value="female"
+    //           control={<Radio />}
+    //           label="Female"
+    //         />
+    //         <FormControlLabel value="male" control={<Radio />} label="Male" />
+    //       </RadioGroup>
+    //     </FormControl>
+    //   );
   }
 };
 

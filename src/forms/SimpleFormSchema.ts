@@ -63,6 +63,33 @@ const SimpleFormSchema = {
         required: false,
       },
     },
+
+    {
+      label: "Φύλλο",
+      name: "sex",
+      type: "radios",
+      properties: {
+        size: { xs: 12, sm: 4 },
+        fieldSize: "small",
+        sx: {
+          paddingLeft: 2,
+          paddingRight: 6,
+          paddingTop: 2,
+          paddingBottom: 2,
+          marginBottom: 1,
+        },
+        options: [
+          { value: "1", label: "Άνδρας" },
+          { value: "2", label: "Γυναίκα" },
+        ],
+        row: true,
+      },
+      validation: {
+        readOnly: false,
+        disabled: false,
+        required: false,
+      },
+    },
   ],
 };
 

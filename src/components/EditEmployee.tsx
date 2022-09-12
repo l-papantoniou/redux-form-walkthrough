@@ -31,6 +31,7 @@ export const EditEmployee = (setAuth) => {
       const response: any = await dispatch(
         updateEmployee({ ...entity, id: params.id })
       );
+      console.log(response.payload.data);
       if (
         response.payload.data === "Λάθος ΑΦΜ" ||
         response.payload.data ===
@@ -49,6 +50,7 @@ export const EditEmployee = (setAuth) => {
     <FormEmployee
       onSubmit={onSubmitForm}
       schema={SimpleFormSchema}
+      errorMessage={errorMessage}
       id={params.id}
     />
   );
