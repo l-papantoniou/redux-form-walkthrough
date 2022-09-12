@@ -38,7 +38,7 @@ export const deleteEmployee = createAsyncThunk(
 export const updateEmployee = createAsyncThunk(
   "employee/edit",
   async (entity: EmployeeInterface) => {
-    console.log(entity.id);
+    console.log(entity);
     const requestUrl = `http://localhost:5000/employees/${entity.id}`;
     const response = await axios.put(requestUrl, entity);
     return response;

@@ -9,8 +9,8 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 
-import InputEmployee from "./components/InputEmployee";
-import EditEmployee from "./components/EditEmployee";
+import { InputEmployee } from "./components/InputEmployee";
+import { EditEmployee } from "./components/EditEmployee";
 import ListEmployees from "./components/ListEmployees";
 import ButtonAppBar from "./components/Navbar";
 import Login from "./components/Login";

@@ -99,7 +99,6 @@ const ListEmployees = ({ setAuth }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [employees]);
 
-  console.log(employees);
   return (
     <Fragment>
       <Card

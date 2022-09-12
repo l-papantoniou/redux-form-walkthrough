@@ -1,6 +1,6 @@
 const SimpleFormSchema = {
-  label: "Simple Form",
-  name: "Simple Form",
+  label: "EmployeeForm",
+  name: "EmployeeForm",
   initialValues: {},
   elements: [
     {
