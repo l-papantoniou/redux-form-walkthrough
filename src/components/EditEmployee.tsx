@@ -3,7 +3,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "../forms/SingleForm";
 import SimpleFormSchema from "../forms/SimpleFormSchema";
-import { loadEmployee, updateEmployee } from "../reducers/EmployeeReducer";
+import {
+  employeeActions,
+  loadEmployee,
+  updateEmployee,
+} from "../reducers/EmployeeReducer";
 import FormEmployee from "../forms/FormEmployee";
 import { EmployeeInterface } from "../interfaces/EmpoyeeInterface";
 
@@ -35,6 +39,7 @@ export const EditEmployee = (setAuth) => {
         setErrorMessage("Λάθος ΑΦΜ!");
         throw Error();
       }
+      dispatch(employeeActions.clearUpdateEmployee());
       navigate("/");
     } catch (err) {
       console.error(err.message);
